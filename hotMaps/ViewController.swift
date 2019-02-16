@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import GoogleMaps
+//import GoogleMaps
 
 class ViewController: UIViewController {
 
@@ -14,8 +14,8 @@ class ViewController: UIViewController {
     var menuShow = false
     @IBOutlet weak var menuView: UIView!
     
-    override func loadView() {
-        // Create a GMSCameraPosition that tells the map to display the
+ //   override func loadView() {
+   /*     // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
-    }
+ */
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

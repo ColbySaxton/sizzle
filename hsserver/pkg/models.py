@@ -1,5 +1,5 @@
 #creates an SQLalchemy ORM mapping of database tables
-from sqlalchemy import Column, Integer, String, Boolean, DateTime, ForeignKey
+from sqlalchemy import Column, Float, Integer, String, Boolean, DateTime, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 ########################################################################
@@ -23,8 +23,8 @@ class Events(Base):
     description=Column(String(1000))
     live_number = Column(Integer)
     trend = Column(Integer)
-    x_coordinate = Column(Integer)
-    y_coordinate = Column(Integer)
+    x_coordinate = Column(Float)
+    y_coordinate = Column(Float)
     date = Column(DateTime)
     owner = Column(Integer,ForeignKey("users.id"),nullable=False)
     
@@ -44,8 +44,8 @@ class Hotspots(Base):
     description=Column(String(1000))
     live_number = Column(Integer)
     trend = Column(Integer)
-    x_coordinate = Column(Integer)
-    y_coordinate = Column(Integer)
+    x_coordinate = Column(Float)
+    y_coordinate = Column(Float)
     owner = Column(Integer,ForeignKey("users.id"),nullable=False)
     
     def __init__(self,name,description,x,y, owner_id):

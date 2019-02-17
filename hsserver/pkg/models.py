@@ -82,10 +82,10 @@ class Interested_in_Event(Base):
 class Interested_in_Hotspot(Base):
     __tablename__ = "int_in_hotspots"
     id = Column(Integer,autoincrement=True, primary_key=True)
-    event_id = Column(Integer,ForeignKey("hotspots.id"),nullable=False)
+    hs_id = Column(Integer,ForeignKey("hotspots.id"),nullable=False)
     user_id = Column(Integer,ForeignKey("users.id"),nullable=False)
-    def __init__(self,e_id,u_id):
-        self.event_id = e_id
+    def __init__(self,hs_id,u_id):
+        self.hs_id = hs_id
         self.user_id  = u_id
 
 

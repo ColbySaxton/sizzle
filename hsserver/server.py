@@ -51,6 +51,17 @@ def geoTally(u_id,x,y):
         Session.commit()
 
 
+def int_in_event(e_id,u_id):
+        iie = Interested_in_Event(e_id,u_id)
+        Session.add(iie)
+        Session.commit()
+
+def int_in_hs(hs_id,u_id):
+        iih = Interested_in_Hotspot(hs_id,u_id)
+        Session.add(iih)
+        Session.commit()
+        
+
 '''
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 	s.bind((HOST, PORT))

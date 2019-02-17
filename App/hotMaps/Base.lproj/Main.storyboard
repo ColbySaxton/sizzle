@@ -42,6 +42,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c7p-4x-gMe">
                                         <rect key="frame" x="164" y="381" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="gameNightSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="XcR-Ep-nen"/>
+                                        </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3e-uW-4JY">
                                         <rect key="frame" x="16" y="474" width="72" height="36"/>
@@ -92,6 +95,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wV-9X-yfh">
                                         <rect key="frame" x="164" y="83" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="jazzSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Zz0-a5-Pgr"/>
+                                        </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCG-Qm-TP5">
                                         <rect key="frame" x="16" y="40" width="41" height="38"/>
@@ -143,6 +149,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HzA-cO-SCu">
                                         <rect key="frame" x="165" y="340" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="comedySwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kfc-3Z-p3l"/>
+                                        </connections>
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Comedy" translatesAutoresizingMaskIntoConstraints="NO" id="DKS-fu-kuX">
                                         <rect key="frame" x="16" y="340" width="34" height="33"/>
@@ -158,6 +167,9 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mR-Cx-ntC">
                                         <rect key="frame" x="165" y="424" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="musicSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zNL-l4-gWp"/>
+                                        </connections>
                                     </switch>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Live Music Event" translatesAutoresizingMaskIntoConstraints="NO" id="fd9-hP-pCi">
                                         <rect key="frame" x="16" y="424" width="34" height="33"/>
@@ -166,18 +178,30 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bdr-vp-uBN">
                                         <rect key="frame" x="164" y="123" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="hotelSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="CMv-nO-m7P"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B3T-tv-oLA">
                                         <rect key="frame" x="165" y="165" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="pubSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="oKs-hD-er0"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65R-cR-qIh">
                                         <rect key="frame" x="165" y="206" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="specialSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="p5t-RP-YMi"/>
+                                        </connections>
                                     </switch>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ay-Ai-BV1">
                                         <rect key="frame" x="165" y="249" width="49" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="sportSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="a2D-pS-c46"/>
+                                        </connections>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJw-TR-cRO">
                                         <rect key="frame" x="16" y="546" width="138" height="36"/>
@@ -186,6 +210,9 @@
                                         <state key="normal" title="Create an Event">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="orX-lF-jV6" kind="show" id="g7O-nR-naq"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.33379516981609458" green="0.37991192146039438" blue="0.66163374352331605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -210,13 +237,97 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="comedySwitch" destination="8bC-Xf-vdC" id="oMm-0R-ZCB"/>
+                        <outlet property="gamenightSwitch" destination="8bC-Xf-vdC" id="Lez-Vf-uNd"/>
+                        <outlet property="hotelSwitch" destination="8bC-Xf-vdC" id="yau-XV-IfK"/>
+                        <outlet property="jazzSwitch" destination="8bC-Xf-vdC" id="n08-C8-Gh0"/>
                         <outlet property="leadingSpace" destination="NmM-nb-dm2" id="jC7-lG-FKZ"/>
                         <outlet property="menuView" destination="111-KC-gfl" id="rGp-Fu-UiI"/>
+                        <outlet property="musicSwitch" destination="8bC-Xf-vdC" id="rNR-Ex-Yo6"/>
+                        <outlet property="pubSwitch" destination="8bC-Xf-vdC" id="ATe-oB-mJr"/>
+                        <outlet property="specialtySwitch" destination="8bC-Xf-vdC" id="z0k-XU-UG7"/>
+                        <outlet property="sportSwitch" destination="8bC-Xf-vdC" id="CHc-23-2N5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2738.4000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Ff3-N7-vXc">
+            <objects>
+                <viewController id="orX-lF-jV6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UPu-qu-7QY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Creating an event" translatesAutoresizingMaskIntoConstraints="NO" id="uOZ-Ak-REc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x2x-So-BUC">
+                                <rect key="frame" x="133" y="616" width="112" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create Event"/>
+                                <connections>
+                                    <segue destination="YVV-q8-dYh" kind="show" id="XlX-FS-KsZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SkG-qt-cIS">
+                                <rect key="frame" x="69" y="309" width="240" height="276"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Own a business? Want to get your event and name out into the public? Start by creating an event! Sizzle is the only platform where you can advertise per event with nightly resets of ratings and reviews. A new event means new ratings. See in real time as your event grows and becomes the highlight of the night!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UoN-09-Qpb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gSi-5G-1w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3664.8000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gC5-zo-C60">
+            <objects>
+                <viewController id="YVV-q8-dYh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zex-Jg-Tby">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-1T-tjc">
+                                <rect key="frame" x="16" y="113" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Df9-HC-ZHr">
+                                <rect key="frame" x="16" y="182" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgk-Ew-rER">
+                                <rect key="frame" x="16" y="256" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="7jZ-mg-evx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u7O-9r-Are" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4510" y="133"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZJt-gw-6X5">
@@ -240,7 +351,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0VV-II-IGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3553" y="133"/>
+            <point key="canvasLocation" x="3666" y="-670"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="UvN-cW-13S">
@@ -279,6 +390,7 @@
     </scenes>
     <resources>
         <image name="Comedy" width="256" height="256"/>
+        <image name="Creating an event" width="1600" height="900"/>
         <image name="Game Night" width="512" height="512"/>
         <image name="Hotel Bar" width="512" height="512"/>
         <image name="Jazz Bar" width="200" height="200"/>

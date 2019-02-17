@@ -15,6 +15,7 @@
 		946F6B7122187F6A005C8126 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 946F6B6F22187F6A005C8126 /* LaunchScreen.storyboard */; };
 		946F6B7C22187F6B005C8126 /* hotMapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F6B7B22187F6B005C8126 /* hotMapsTests.swift */; };
 		946F6B8722187F6B005C8126 /* hotMapsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946F6B8622187F6B005C8126 /* hotMapsUITests.swift */; };
+		9488A5BE2219820100EC6B84 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9488A5BD2219820100EC6B84 /* CreateEventViewController.swift */; };
 		DC5463B156BBA9A67B08BF8E /* Pods_hotMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44F0D22F30E66B1D61E7AB77 /* Pods_hotMaps.framework */; };
 		E1932C6B1A9CB73E53530956 /* Pods_hotMapsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D40A6F17601FF254B87D5B /* Pods_hotMapsUITests.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		946F6B8222187F6B005C8126 /* hotMapsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotMapsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		946F6B8622187F6B005C8126 /* hotMapsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotMapsUITests.swift; sourceTree = "<group>"; };
 		946F6B8822187F6B005C8126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9488A5BD2219820100EC6B84 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		D4BBA8988962C65740504109 /* Pods-hotMapsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotMapsUITests.release.xcconfig"; path = "Target Support Files/Pods-hotMapsUITests/Pods-hotMapsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E934AC40CE2559B62D89511D /* Pods-hotMapsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotMapsTests.debug.xcconfig"; path = "Target Support Files/Pods-hotMapsTests/Pods-hotMapsTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,7 +111,6 @@
 				64F9650DFF8B88B1218D4D5A /* Pods-hotMapsUITests.debug.xcconfig */,
 				D4BBA8988962C65740504109 /* Pods-hotMapsUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +145,7 @@
 				946F6B6D22187F6A005C8126 /* Assets.xcassets */,
 				946F6B6F22187F6A005C8126 /* LaunchScreen.storyboard */,
 				946F6B7222187F6A005C8126 /* Info.plist */,
+				9488A5BD2219820100EC6B84 /* CreateEventViewController.swift */,
 			);
 			path = hotMaps;
 			sourceTree = "<group>";
@@ -418,6 +420,7 @@
 			files = (
 				946F6B6922187F68005C8126 /* ViewController.swift in Sources */,
 				946F6B6722187F68005C8126 /* AppDelegate.swift in Sources */,
+				9488A5BE2219820100EC6B84 /* CreateEventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

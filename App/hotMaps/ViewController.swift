@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     @IBOutlet var gamenightSwitch: UIView!
     @IBOutlet var musicSwitch: UIView!
     
+    @IBOutlet weak var sizzleButton: UIButton!
+    @IBOutlet weak var eventButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,8 @@ class ViewController: UIViewController {
         
         _ = Timer.scheduledTimer(timeInterval: 600.0, target: self, selector: #selector(updateMarkers), userInfo: nil, repeats: true)
         
+        self.view.bringSubviewToFront(sizzleButton)
+        self.view.bringSubviewToFront(eventButton)
     }
 
 
@@ -125,12 +129,21 @@ class ViewController: UIViewController {
         //iterate through items, adding marker
         //************************************* Example marker entries
         
+        if hs {
         addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.511130, longitude: -81.602635), title: "happyDog", desc: "fools gold", liveNum: 1, venueType: 1)
         
         addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.509197, longitude: -81.605424), title: "Sports Bar: Corner Alley" , desc: "Location: 402 Euclid Ave, Cleveland, OH 44114 \nTime: 9:00pm - 2:00am \nDescription: Come join us in the heart of downtown as we watch the final regular season game for the Cleveland Cavaliers! Defend the LAND!", liveNum: 10, venueType: 5)
         addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.508736, longitude: -81.604605), title: "Hotel Bar: The Vault", desc: "Location: 2017 E 9th St, Cleveland, OH 44115\nTime: 8:00pm - 2:30am \nDescription: Travel back in time and experience the glamor and luxury of a classic 1800s Cleveland bank. Surround yourself in elegance, history, and incredible hand-crafted cocktails.", liveNum: 60,  venueType: 4)
         addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.507441, longitude: -81.608250), title: "Music: Drag Queen Show @ The Jolly Scholar", desc: "Location: Thwing Center, 11111 Euclid Ave, Cleveland, OH 44106\nTime: 8:00pm - 10:00pm\nDescription: Catch Rupaul’s, “A Drag Queen’s Christmas” with discounted prices exclusively on Habanero! ", liveNum: 60, venueType: 3)
         addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.500801    , longitude: -81.592810), title: "Specialty: Fairmount Bar", desc: "Location: 2448 Fairmount Blvd, Cleveland, OH 44106\nTime: 8:00pm - 1:30am\nDescription: Enjoy Cleveland’s best made to order drinks, with over fifty beers on tap. Immerse yourself in this young and upcoming area in Cleveland Heights!", liveNum: 20, venueType: 4)
+        }
+        else{
+            
+            addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.509197, longitude: -81.605424), title: "Sports Bar: Corner Alley" , desc: "Location: 402 Euclid Ave, Cleveland, OH 44114 \nTime: 9:00pm - 2:00am \nDescription: Come join us in the heart of downtown as we watch the final regular season game for the Cleveland Cavaliers! Defend the LAND!", liveNum: 10, venueType: 5)
+            addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.508736, longitude: -81.604605), title: "Heist at the Vault!", desc: "Location: 2017 E 9th St, Cleveland, OH 44115\nTime: 8:00pm - 2:30am \nDescription: Come break out of the vault!", liveNum: 60,  venueType: 4)
+            addMarker(map: mapView, position: CLLocationCoordinate2D(latitude: 41.507441, longitude: -81.608250), title: "Music: Drag Queen Show @ The Jolly Scholar", desc: "Location: Thwing Center, 11111 Euclid Ave, Cleveland, OH 44106\nTime: 8:00pm - 10:00pm\nDescription: Catch Rupaul’s, “A Drag Queen’s Christmas” with discounted prices exclusively on Habanero! ", liveNum: 60, venueType: 3)
+           
+        }
         
     }
     
@@ -149,6 +162,7 @@ class ViewController: UIViewController {
             return;
         }
 
+        if hs{
         switch(liveNum){
             //load different icon for  each venue (custom markers)
         case 0..<15:
@@ -160,6 +174,41 @@ class ViewController: UIViewController {
         default:
             //todo error log here for a bad venue type
             ic = GMSMarker.markerImage(with: UIColor.red)
+        }
+        }
+        else{
+            /*
+            switch venueType{
+            case 1:
+                ic =  UIImage(named: "Jazz Bar")!
+            case 2:
+                ic = UIImage(named: "Hotel Bar")!
+            case 3:
+                ic = UIImage(named: "Pub")!
+            case 4:
+                ic = UIImage(named: "Specialty Bar")!
+            case 5:
+                ic = UIImage(named: "Sports Bar")!
+            case 6:
+                ic = UIImage(named: "Comedy")!
+            case 7:
+                ic = UIImage(named: "Game Night")!
+            default:
+                ic = UIImage(named: "Live Music Event")!
+            }
+            */
+            switch(liveNum){
+            //load different icon for  each venue (custom markers)
+            case 0..<15:
+                ic = GMSMarker.markerImage(with: UIColor.blue)
+            case 15..<40:
+                ic = GMSMarker.markerImage(with: UIColor(displayP3Red: 0.25, green: 0.0, blue: 0.0, alpha: 1.0))
+            case 40..<100:
+                ic = GMSMarker.markerImage(with: UIColor.red)
+            default:
+                //todo error log here for a bad venue type
+                ic = GMSMarker.markerImage(with: UIColor.red)
+            }
         }
         
 
@@ -210,5 +259,13 @@ class ViewController: UIViewController {
         updateMarkers(mapView: mapReference!)
     }
     
+    @IBAction func showHS(_ sender: Any) {
+        hs = true
+        updateMarkers(mapView: mapReference!)
+    }
+    @IBAction func showEvents(_ sender: Any) {
+        hs = false
+        updateMarkers(mapView: mapReference!)
+    }
 }
 

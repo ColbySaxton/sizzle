@@ -26,6 +26,7 @@ class Events(Base):
     x_coordinate = Column(Float)
     y_coordinate = Column(Float)
     date = Column(DateTime)
+    recentTally = Column(Integer)
     owner = Column(Integer,ForeignKey("users.id"),nullable=False)
     
     def __init__(self,name,description,x,y, date, owner_id):
@@ -35,9 +36,12 @@ class Events(Base):
         self.y_coordinate = y
         self.date = date
         self.owner = owner_id
+        self.recentTally = 0
+        self.live_number = 0
+        self.trend = 0
 
     def __repr__(self):
-        return("name : {}\ndescription : {}\nlive num : {}\ntrend : {}\nx : {}\ny : {}\ndate : {}\nowner : {}".format(self.name,self.description,self.live_number,self.trend,self.x_coordinate,self.y_coordinate,self.date,self.owner))
+        return("name : {}\ndescription : {}\nlive num : {}\ntrend : {}\nx : {}\ny : {}\ndate : {}\nrecent tally : {}\nowner : {}".format(self.name,self.description,self.live_number,self.trend,self.x_coordinate,self.y_coordinate,self.date,self.recentTally,self.owner))
 
 
 class Hotspots(Base):
@@ -49,6 +53,7 @@ class Hotspots(Base):
     trend = Column(Integer)
     x_coordinate = Column(Float)
     y_coordinate = Column(Float)
+    recentTally = Column(Integer)
     owner = Column(Integer,ForeignKey("users.id"),nullable=False)
     
     def __init__(self,name,description,x,y, owner_id):
@@ -57,6 +62,13 @@ class Hotspots(Base):
         self.owner = owner_id
         self.x_coordinate = x
         self.y_coordinate = y
+        self.recentTally = 0
+        self.live_number = 0
+        self.trend = 0
+
+    def __repr__(self):
+        return("name : {}\ndescription : {}\nlive num : {}\ntrend : {}\nx : {}\ny : {}\nrecent tally : {}\nowner : {}".format(self.name,self.description,self.live_number,self.trend,self.x_coordinate,self.y_coordinate,self.recentTally,self.owner))
+
 
 class Interested_in_Event(Base):
     __tablename__ = "int_in_events"
@@ -70,7 +82,7 @@ class Interested_in_Event(Base):
 class Interested_in_Hotspot(Base):
     __tablename__ = "int_in_hotspots"
     id = Column(Integer,autoincrement=True, primary_key=True)
-    event_id = Column(Integer,ForeignKey("events.id"),nullable=False)
+    event_id = Column(Integer,ForeignKey("hotspots.id"),nullable=False)
     user_id = Column(Integer,ForeignKey("users.id"),nullable=False)
     def __init__(self,e_id,u_id):
         self.event_id = e_id

@@ -3,7 +3,7 @@ from pkg import engine
 from pkg.models import *
 import socket
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy import func
+from sqlalchemy import func, or_, and_, update
 from datetime import datetime
 
 HOST = "127.0.0.1"
@@ -11,30 +11,47 @@ PORT = 8000
 Sessionmaker = sessionmaker(bind=engine)
 Session = Sessionmaker()
 
-'''
-u1 = User('yeet','a@b.c')
-Session.add(u1)
-e1  = Events('e1','e1desc',1.0,1.0,datetime.now(),1)
-e2  = Events('e2','e2desc',-1.0,-1.0,datetime.now(),1)
-Session.add(e1)
-Session.add(e2)
-eint1 = Interested_in_Event(1,1)
-eint2 = Interested_in_Event(1,2)
-eint3 = Interested_in_Event(1,3)
-eint4 = Interested_in_Event(2,4)
-eint5 = Interested_in_Event(2,5)
-for eint in [eint1,eint2,eint3,eint4,eint5]:    
-        Session.add(eint)
-Session.commit()
-'''
-
 def getEvents():
         events = (Session.query(Events,func.count(Interested_in_Event.id)).outerjoin(Interested_in_Event).group_by(Events).all())
         #events = Session.query(Events,Interested_in_Event).group_by(Events).all()
         return(events)
 
-print(getEvents())
+def getHotspots():
+        hs = (Session.query(Hotspots,func.count(Interested_in_Hotspot.id)).outerjoin(Interested_in_Hotspot).group_by(Hotspots).all())
+        #hs = Hotspots.query.all()
+        return(hs)
 
+def createUser(email,password_hash):
+        u = User(password_hash,email)
+        Session.add(u)
+        Session.commit()
+
+
+def updateCounts():
+        Session.execute(update(Events, values={Events.trend: Events.recentTally- Events.live_number}))
+        Session.execute(update(Events, values={Events.live_number: Events.recentTally}))
+        Session.execute(update(Events, values={Events.recentTally: 0}))
+        Session.execute(update(Hotspots, values={Hotspots.trend: Hotspots.recentTally- Hotspots.live_number}))
+        Session.execute(update(Hotspots, values={Hotspots.live_number: Hotspots.recentTally}))
+        Session.execute(update(Hotspots, values={Hotspots.recentTally: 0}))
+        Session.commit()
+                
+
+def geoTally(u_id,x,y):
+        eventNearby = Session.query(Events).filter(and_(and_(x<3+Events.x_coordinate,x>Events.x_coordinate-3),\
+                                                        and_(y<3+Events.y_coordinate,y>Events.y_coordinate-3))).one_or_none()
+        hsNearby = Session.query(Hotspots).filter(and_(and_(x<3+Hotspots.x_coordinate,x>Hotspots.x_coordinate-3),\
+                                                     and_(y<3+Hotspots.y_coordinate,y>Hotspots.y_coordinate-3))).one_or_none()
+        if eventNearby is not None:
+                eventNearby.recentTally += 1
+                Session.add(eventNearby)
+        if hsNearby is not None:
+                hsNearby.recentTally += 1
+                Session.add(hsNearby)
+        Session.commit()
+
+
+'''
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 	s.bind((HOST, PORT))
 	s.listen()
@@ -47,8 +64,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 				#break
 			conn.sendall(data)
 
-
-def getHotspots():
-	hs = Hotspots.query.all()
-	return(hs)
-
+'''

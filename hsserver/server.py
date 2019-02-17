@@ -102,6 +102,10 @@ if not setup_mode:
 						response = getHotspots()
 					elif(header == 'getevents'):
 						response = getEvents()
+					elif(header == 'iie'):
+						int_in_event(js[header][0], js[header][1])
+					elif(header == 'iihs'):
+						int_in_hs(js[header][0], js[header][1])
 					response = json.dumps(response,default=str)
 					conn.sendall(response.encode())
 				#except:

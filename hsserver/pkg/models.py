@@ -11,7 +11,7 @@ class User(Base):
     password_hash = Column(String(60))
     b_owner = Column(Boolean)
     
-    def __init__(self, username, password_hash,email):
+    def __init__(self, password_hash,email):
         self.password_hash = password_hash
         self.email=email
 
@@ -35,6 +35,9 @@ class Events(Base):
         self.y_coordinate = y
         self.date = date
         self.owner = owner_id
+
+    def __repr__(self):
+        return("name : {}\ndescription : {}\nlive num : {}\ntrend : {}\nx : {}\ny : {}\ndate : {}\nowner : {}".format(self.name,self.description,self.live_number,self.trend,self.x_coordinate,self.y_coordinate,self.date,self.owner))
 
 
 class Hotspots(Base):
